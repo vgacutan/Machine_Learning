@@ -2,5 +2,4 @@
 
 * Manipulating Financial Data
 * Computational Investing
-* learning Algoritms for Trading
-
+* Learning Algoritms for Trading
