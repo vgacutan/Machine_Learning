@@ -1,4 +1,4 @@
-"""MC1-P1: Analyze a portfolio."""
+"""Analyze a portfolio."""
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -19,7 +19,7 @@ def assess_portfolio(sd = dt.datetime(2008,1,1), ed = dt.datetime(2009,1,1), \
     prices_SPY = prices_all['SPY']  # only SPY, for comparison later
 
     # Get daily portfolio value 
-    port_val = prices_SPY # add code here to compute daily portfolio values (formula from the video lectures)
+    port_val = prices_SPY 
     normPrice = prices/prices.ix[0,:]
     allocPrice = normPrice * allocs
     posnValsPrice = allocPrice * sv
@@ -27,7 +27,7 @@ def assess_portfolio(sd = dt.datetime(2008,1,1), ed = dt.datetime(2009,1,1), \
     
     
     # Get portfolio statistics (note: std_daily_ret = volatility)
-    cr, adr, sddr, sr = [0.25, 0.001, 0.0005, 2.1] # add code here to compute stats (formula from the video lectures)
+    cr, adr, sddr, sr = [0.25, 0.001, 0.0005, 2.1] 
     dailyPriceReturn = (port_val / port_val.shift(1)) -1
     dailyPriceReturn = dailyPriceReturn[1:]
  
@@ -40,7 +40,6 @@ def assess_portfolio(sd = dt.datetime(2008,1,1), ed = dt.datetime(2009,1,1), \
     
     # Compare daily portfolio value with SPY using a normalized plot
     if gen_plot:
-        # add code to plot here (formula from the video lectures)
         pvalNorm=port_val / port_val.ix[0,:]
         spyNormVal = prices_SPY / prices_SPY.ix[0,:]
         port_val = pvalNorm
@@ -54,7 +53,7 @@ def assess_portfolio(sd = dt.datetime(2008,1,1), ed = dt.datetime(2009,1,1), \
         plt.show()
         pass
     
-    # Add code here to properly compute end value
+
     sv =  port_val[-1] #value of the portfolio at end of the investent period
     ev = sv
 
